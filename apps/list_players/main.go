@@ -4,14 +4,12 @@ import (
 	"flag"
 	"fmt"
 	"github.com/sirupsen/logrus"
-	"github.com/ypapax/logrus_conf"
 	"github.com/ypapax/players/config"
 	"github.com/ypapax/players/parser"
 	"os"
 )
 
 func main() {
-	logrus_conf.Files("players", logrus.TraceLevel)
 	var confPath string
 	flag.StringVar(&confPath, "conf", "conf.yaml", "path to config file")
 	flag.Parse()

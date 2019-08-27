@@ -1,0 +1,10 @@
+version: "3.5"
+
+services:
+  players:
+    container_name: list_players
+    build:
+      context: .
+      dockerfile: apps/list_players/Dockerfile
+    environment:
+      - CONF=/list_players/conf.yaml

@@ -38,7 +38,7 @@ func GetPlayers(urlTemplate string, teams []string, timeout time.Duration) ([]te
 				return err
 			}
 			if _, ok := requiredTeams[tr.Data.Team.Name]; !ok {
-				logrus.Infof("team '%+v' is not in our list", tr.Data.Team.Name)
+				logrus.Tracef("team '%+v' is not in our list", tr.Data.Team.Name)
 				return nil
 			}
 
@@ -51,7 +51,7 @@ func GetPlayers(urlTemplate string, teams []string, timeout time.Duration) ([]te
 				}
 				foundPlayers[p.Id].Teams[tr.Data.Team.Id] = tr.Data.Team
 			}
-			logrus.Printf("foundTeams: %+v, requiredTeams: %+v", len(foundTeams), len(requiredTeams))
+			logrus.Tracef("foundTeams: %+v, requiredTeams: %+v", len(foundTeams), len(requiredTeams))
 			return nil
 		}(teamID); err != nil {
 			logrus.Error(err)
@@ -70,7 +70,7 @@ func GetPlayers(urlTemplate string, teams []string, timeout time.Duration) ([]te
 }
 
 func req(url string, requestTimeout time.Duration) ([]byte, int, error) {
-	logrus.Infof("requesting %+v", url)
+	logrus.Tracef("requesting %+v", url)
 	client := http.Client{
 		Timeout: requestTimeout,
 	}

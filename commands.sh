@@ -11,4 +11,10 @@ run() {
   list_players
 }
 
+runc() {
+  build
+  docker-compose build
+  docker-compose up
+}
+
 "$@"
