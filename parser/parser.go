@@ -55,7 +55,6 @@ func GetPlayers(urlTemplate string, teams []string, timeout time.Duration) ([]te
 			return nil
 		}(teamID); err != nil {
 			logrus.Error(err)
-			return nil, err
 		}
 		teamID++
 		if len(foundTeams) == len(requiredTeams) {
