@@ -2,6 +2,7 @@ package team
 
 import (
 	"fmt"
+	"sort"
 	"strings"
 )
 
@@ -23,5 +24,6 @@ func (p Player) String() string {
 	for _, t := range p.Teams {
 		teamNames = append(teamNames, t.Name)
 	}
+	sort.Strings(teamNames)
 	return fmt.Sprintf("%+v; %+v; %+v", p.Name, p.Age, strings.Join(teamNames, ", "))
 }
