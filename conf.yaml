@@ -1,0 +1,13 @@
+url_template: https://vintagemonster.onefootball.com/api/teams/en/%d.json
+teams:
+  - Germany
+  - England
+  - France
+  - Spain
+  - Manchester United
+  - Arsenal
+  - Chelsea
+  - Barcelona
+  - Real Madrid
+  - Bayern Munich
+timeout: 10s
